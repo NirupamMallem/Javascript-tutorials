@@ -1,68 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Validation</title>
-    <style>
-       
-       body {
-            padding: 10px 50px;
-        }
-
-        .formdesign {
-            font-size: 20px;
-
-        }
-
-        .formdesign input {
-            width: 50%;
-            padding: 12px 20px;
-            border: 1px solid blue;
-            margin: 14px;
-            border-radius: 4px;
-            font-size: 15px;
-        }
-
-        .formerror {
-            color: red;
-        }
-
-        .but {
-            border-radius: 9px;
-            width: 100px;
-            height: 50px;
-            font-size: 25px;
-            margin: 22px 20px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="formValidation.css">
 </head>
+
 <body>
-    <h1>Welcome to the best form on Internet!</h1>
-    <form aciton ="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
-        <div class="formdesign" id="name">
-            Name: <input type="text" name="fname" required><b><span class="formerror"> </span></b>
-        </div>
+    <div class="container">
+        <u>
+            <h1>WEEK ASSIGNMENT - CTX</h1>
+        </u>
+        <br>
+        <center><u><B>
+                    <h3>Form Validation using JavaScript</h3>
+                </B></u></center>
 
-        <div class="formdesign" id="email">
-            Email: <input type="email" name="femail" required><b><span class="formerror"> </span></b>
-        </div>
+        <form action="/myaction.php" name="myForm" id="myForm" onsubmit="return validateForm()" method="post">
+            <div class="formdesign" id="name">
+                Name: <input type="text" name="fname" required> <b> <span class="formerror"> </span></b>
+            </div>
 
-        <div class="formdesign" id="phone">
-            Phone: <input type="phone" name="fphone" required><b><span class="formerror"></span></b>
-        </div>
+            <div class="formdesign" id="email">
+                Email: <input type="email" name="femail" required> <b><span class="formerror"> </span></b>
+            </div>
 
-        <div class="formdesign" id="pass">
-            Password: <input type="password" name="fpass" required><b><span class="formerror"</span></b>
-        </div>
+            <div class="formdesign" id="phone">
+                Phone: <input type="number" name="fphone" required> <b><span class="formerror"></span></b>
+            </div>
 
-        <div class="formdesign" id="cpass">
-            Confirm Password: <input type="password" name="fcpass" required><b><span class="formerror"></span></b>
-        </div>
 
-        <input class="but" type="submit" value="Submit">
 
-    </form>
+            <div class="formdesign" id="ccity">
+                Select City:
+                <select name="fcity" required>
+                    <option value="">Select a city</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+                <b><span class="formerror"></span></b>
+            </div>
+
+            <div class="formdesign" id="cgender">
+                Gender:
+                <input type="radio" name="fgender" value="male" id="male" required>
+                <label for="male">Male</label>
+                <input type="radio" name="fgender" value="female" id="female">
+                <label for="female">Female</label>
+                <b><span class="formerror"></span></b>
+            </div>
+            <div class="formdesign" id="clocations">
+                Preferred Locations:
+                <input type="checkbox" name="flocations" value="Hyderabad" id="location_hyderabad">
+                <label for="location_hyderabad">Hyderabad</label>
+                <input type="checkbox" name="flocations" value="Chennai" id="location_chennai">
+                <label for="location_chennai">Chennai</label>
+                <input type="checkbox" name="flocations" value="Bengaluru" id="location_bengaluru">
+                <label for="location_bengaluru">Bengaluru</label>
+                <b><span class="formerror"></span></b>
+            </div>
+            <div class="formdesign" id="ctextbox">
+                Text Box (Max 200 characters):
+                <input type="text" name="ftextbox" maxlength="200" required>
+                <b><span class="formerror"></span></b>
+            </div>
+
+            <div class="formdesign" id="pass">
+                Password: <input type="password" name="fpass" required><b><span class="formerror"></span></b>
+            </div>
+
+            <div class="formdesign" id="cpass">
+                Confirm Password : <input type="password" name="fcpass" required><b><span class="formerror"></span></b>
+            </div>
+
+            <input class="but" type="submit" value="Submit">
+        </form>
+        <div id="displayTable"></div>
+    </div>
 </body>
+<script src="formValidation.js"></script>
+
 </html>
