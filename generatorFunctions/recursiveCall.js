@@ -1,0 +1,5 @@
+function* fact()
+{
+
+    yield* fact()
+}
