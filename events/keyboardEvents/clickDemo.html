@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1 id="cc">EVENT HANDLING</h1></center>
+    <button id="1" >Click me</button>
+   <p> <a id="2" href="https://nirupammallem.github.io/msnportfolio">MY PORTFOLIO</a></p>
+
+</body>
+<script>
+    let bt = document.getElementById("1")
+    let ln = document.getElementById("2")
+    let hd = document.getElementById("cc")
+
+    bt.addEventListener('click', buttonClicked);
+    //Anonymous function
+    ln.addEventListener('click',function(ev)
+    {
+        ev.preventDefault()
+       console.log(ev.type,ev.target,ev.currentTarget)
+    })
+    //Arrow functions
+    hd.addEventListener('click',(ev)=>
+    {
+        console.log(ev.type,ev.target,ev.currentTarget)
+    })
+
+    
+    function buttonClicked(ev)
+    {
+        console.log(ev.type,ev.target,ev.currentTarget)
+    }
+
+// INPUT,CHANGE,BLUR - EVENTS CAN BE APPLIED ON text
+
+
+</script>
+</html>

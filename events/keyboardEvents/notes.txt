@@ -1,0 +1,24 @@
+If I keep the script file at the top of the html, then i should keep all the event listeners inside an init method
+and fire that method only after loading of entire html file. So I need to write an event for that also which is called
+'DOMContentLoaded'
+
+I should add this event to document.
+
+document.addEventListener('DOMContentLoaded',init)
+
+
+When you call event.stopPropagation(), it prevents the event from bubbling up to parent elements.
+In other words, it stops any further event handlers from being executed on parent elements.
+However, it does not prevent the execution of other handlers on the same element.
+
+When you use event.stopImmediatePropagation(), it goes a step further.
+It not only prevents propagation to parent elements but also stops other handlers on the same element from executing.
+Essentially, it halts all further event handlers for the same event on the current element.
+
+Difference Between Target and Current Traget:
+target - It is the element where the eventhandler is actually placed.
+currentTarget - when bubbling happens, target becomes the elemnt on which the handler is placed actually and the currentTarget is 
+something it got bubbled up.
+
+
+
