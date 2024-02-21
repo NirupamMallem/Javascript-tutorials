@@ -1,0 +1,7 @@
+javascript object has a special property called prototype
+which is either null or referes to other object.
+
+when we try to read a property from an object and its 
+missing,js automatically takes it from the prototype which is called
+prototype inheritance.
+
