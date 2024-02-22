@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display GitHub User Data</title>
+  <style>
+   body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #1c338e;
+}
+
+#dataContainer {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  overflow-x: auto;
+}
+
+#userDataTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#userDataTable th, #userDataTable td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+#userDataTable th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#userDataTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#userDataTable tr:hover {
+  background-color: #e0e0e0;
+}
+
+
+  </style>
+</head>
+<body>
+   
+  <button id="displayButton1">Divya Palleti</button>
+  <button id="displayButton2">Karthikeya</button>
+  <button id="displayButton3">Lohitha</button>
+  <button id="displayButton4">Nainitha</button>
+  <button id="displayButton5">Nivas Gupta</button>
+  <button id="displayButton6">Prem </button>
+  <button id="displayButton7">Sameer</button>
+  <button id="displayButton8">Nirupam</button>
+
+  <div id="dataContainer" class="hidden">
+    <table id="userDataTable"></table>
+  </div>
+  <script src="gitData.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+HTTP Verbs - HTTP methods
+
+API gives us two things.
+
+1. protocol and 2. Data to send or receive
+
+In general, parameters can be included in the request body for POST, PUT, PATCH, and DELETE requests, while for other request types, they can be included in the URL path or as query parameters.
+
+
+// An API (Application Programming Interface) itself doesn't hold data; rather, it facilitates communication between different software systems. APIs allow users to send requests to a server or a service where the data resides, enabling them to retrieve, manipulate, or interact with that data in various ways.
+
+// In summary, APIs are a way for software systems to communicate with each other, and the code that defines and implements APIs is typically hosted on servers, which are physical machines located in data centers or the cloud.
+
+//The API defines the methods and protocols for requesting and interacting with that data, providing a standardized way for different applications to communicate and exchange information.
+
+//An API endpoint is essentially a specific URL (Uniform Resource Locator) that serves as a point of interaction between a client application and a server or service. It's like a doorway or a specific address through which you can access a particular functionality or resource provided by the API.
+
+
+// Base URL: This is the main URL of the API service. It identifies the server or service you are communicating with. For example, https://api.example.com.
+
+// Path: The path is the part of the URL that comes after the base URL and specifies the location of the specific resource or action you want to interact with. eg : users
+
+
+// HTTP Method: This indicates the type of operation you want to perform on the resource specified by the endpoint. Common HTTP methods include GET (retrieve data), POST (create new data), PUT (update existing data), DELETE (remove data), and PATCH (partially update data).
+
+// Parameters: Optionally, endpoints can accept parameters, which are additional pieces of information provided in the request to further specify or customize the operation. Parameters can be included in the URL itself (as query parameters) or in the request body for methods like POST and PUT.
+
+
+AJAX - Async JS and XML - N/W requests earlier
+JSON - JS Object Notation
+//All the modern APIs return data in the JSON format.
+which can be parsed easily and converted to JS objects easily when compared with XML data
+
+// It is a 2 step process basically.
+
+// we receive data using fetch method 
+// we need to convert that data into usable format using JSON method
+
+fetch returns a promise and also json() method returns a promise
+which is why we need to write 2 then() methods
+
+
+GET:
+
+Retrieves data from the server.
+Requests made with the GET method should only retrieve data and should not have any other effect on the server.
+Parameters are sent in the query string.
+Example: Fetching a user's profile information from a server.
+POST:
+
+Submits data to be processed to a specified resource.
+Commonly used for submitting form data or uploading files.
+The data sent with POST is included in the body of the request.
+Example: Submitting a registration form on a website.
+PUT:
+
+Updates a resource on the server with the provided data.
+PUT requests are idempotent, meaning multiple identical requests should have the same effect as a single request.
+Used to update existing resources or create new ones if they don't exist.
+Example: Updating a user's profile information.
+DELETE:
+
+Deletes the specified resource from the server.
+Used to remove resources identified by a specific URL.
+DELETE requests are idempotent, meaning multiple identical requests should have the same effect as a single request.
+Example: Deleting a user account or removing a blog post.
+PATCH:
+
+Applies partial modifications to a resource.
+Similar to PUT but only updates the fields provided in the request.
+Used when you want to update part of a resource without affecting the rest.
+Example: Updating only the email address of a user profile.
+HEAD:
+
+Retrieves metadata about a resource without transferring the actual content.
+Similar to GET but only returns the headers, not the body of the response.
+Useful for checking the status or headers of a resource without downloading its entire content.
+Example: Checking if a file has been modified since the last request.
+OPTIONS:
+
+Requests information about the communication options available for the target resource.
+Used to determine the supported methods and other capabilities of the server.
+Commonly used in Cross-Origin Resource Sharing (CORS) to check if a particular cross-origin request is allowed.
+Example: Checking which HTTP methods are allowed for a certain endpoint.
+CONNECT:
+
+Establishes a tunnel to the server identified by the target resource.
+Used for establishing a network connection through a proxy.
+Typically used in HTTPS connections when a client wants to establish a secure tunnel to a server through a proxy server.
+Example: Establishing a secure connection to a server through a proxy.
+TRACE:
+
+Performs a message loop-back test along the path to the target resource.
+Used for diagnostic purposes, allowing a client to see what changes or additions have been made by intermediate servers.
+Less commonly used due to security concerns, as it can expose sensitive information.
+Example: Checking how the request is handled by intermediate servers.
+
+
+https://api.github.com/users/NirupamMallem
+
+scheme - HTTPS
+HOSTNAME - api.github.com
+PATH - /users/NirupamMallem
+BASE URI - https://api.github.com
+
+Abort Controller: We can use this with any async tasks like fetch(), uploading file, reading file.
+We can also use this with event listeners., eventlisterner on the signal, websockets
+
+
+Options:
+An object containing any custom settings you want to apply to the request. The possible options are:
+
+The request method - GET,PUT,POST,DELETE 
+
+Headers: Any headers you want to add to your request
+
+body: Any body that you want to add to your request: this can be a Blob, an ArrayBuffer, a TypedArray, a DataView, a FormData
+
+mode: The mode you want to use for the request, e.g., cors, no-cors, or same-origin.
+
+Credentials: Controls what browsers do with credentials (cookies, HTTP authentication entries, and TLS client certificates).
+
+cache: A string indicating how the request will interact with the browser's HTTP cache.
+
+redirect: How to handle a redirect response
+
+signal: An AbortSignal object instance; allows you to communicate with a fetch request and abort it if desired via an AbortController.
+
+priority: Specifies the priority of the fetch request relative to other requests of the same type. 
+
+
+CORS - security feature implemented by web browsers. It is a mechanism that allows servers to specify which origins are permitted to access the resources on their server.
