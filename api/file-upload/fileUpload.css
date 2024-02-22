@@ -1,0 +1,40 @@
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+#myForm {
+    background-color: #fff;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+#myForm input[type="file"],
+#myForm input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+#myForm button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#myForm button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+.success-message {
+    color: green;
+    margin-top: 5px;
+}
