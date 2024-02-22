@@ -1,0 +1,33 @@
+// An API (Application Programming Interface) itself doesn't hold data; rather, it facilitates communication between different software systems. APIs allow users to send requests to a server or a service where the data resides, enabling them to retrieve, manipulate, or interact with that data in various ways.
+
+// In summary, APIs are a way for software systems to communicate with each other, and the code that defines and implements APIs is typically hosted on servers, which are physical machines located in data centers or the cloud.
+
+//The API defines the methods and protocols for requesting and interacting with that data, providing a standardized way for different applications to communicate and exchange information.
+
+//An API endpoint is essentially a specific URL (Uniform Resource Locator) that serves as a point of interaction between a client application and a server or service. It's like a doorway or a specific address through which you can access a particular functionality or resource provided by the API.
+
+
+// Base URL: This is the main URL of the API service. It identifies the server or service you are communicating with. For example, https://api.example.com.
+
+// Path: The path is the part of the URL that comes after the base URL and specifies the location of the specific resource or action you want to interact with.  eg : users
+
+
+// HTTP Method: This indicates the type of operation you want to perform on the resource specified by the endpoint. Common HTTP methods include GET (retrieve data), POST (create new data), PUT (update existing data), DELETE (remove data), and PATCH (partially update data).
+
+// Parameters: Optionally, endpoints can accept parameters, which are additional pieces of information provided in the request to further specify or customize the operation. Parameters can be included in the URL itself (as query parameters) or in the request body for methods like POST and PUT.
+
+
+AJAX - Async JS and XML - N/W requests earlier
+JSON - JS Object Notation
+//All the modern APIs return data in the JSON format.
+which can be parsed easily and converted to JS objects easily when compared with XML data
+
+// It is a 2 step process basically.
+
+// we receive data using fetch method 
+// we need to convert that data into usable format using JSON method
+
+fetch returns a promise and also json() method returns a promise
+which is why we need to write 2 then()
+
+
