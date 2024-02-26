@@ -64,7 +64,21 @@ button:hover {
   background-color: #e0e0e0;
 }
 
+.addDeleteButtons {
+  margin-top: 10px;
+}
 
+input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.rowNumberCell {
+  font-weight: bold;
+}
   </style>
 </head>
 <body>
@@ -80,7 +94,73 @@ button:hover {
 
   <div id="dataContainer" class="hidden">
     <table id="userDataTable"></table>
+    <div class="addDeleteButtons">
+      <button onclick="addRow()">Add Row</button>
+      <button onclick="deleteRow()">Delete Row</button>
+      <input type="number" id="rowNumber" placeholder="Row Number">
+      <button onclick="addColumns()">Add Column</button>
+      <button onclick="deleteColumn()">Delete Column</button>
+      <input type="number" id="columnNumber" placeholder="Column Number">
+    </div>
   </div>
   <script src="gitData.js"></script>
+
+  <script>
+    function addRow() {
+      var table = document.getElementById("userDataTable");
+      var newRow = table.insertRow(-1);
+      var columns = table.rows[0].cells.length;
+      for (var i = 0; i < columns; i++) {
+        var cell = newRow.insertCell(i);
+        cell.innerHTML = "New Cell";
+      }
+      updateRowNumbers();
+    }
+
+    function deleteRow() {
+  var table = document.getElementById("userDataTable");
+  var rowNumber = document.getElementById("rowNumber").value;
+  if (rowNumber !== "") {
+    if (rowNumber >= 1 && rowNumber <= table.rows.length) {
+      var confirmation = confirm("Are you sure you want to delete row " + rowNumber + "?");
+      if (confirmation) {
+        table.deleteRow(rowNumber - 1);
+      }
+    } else {
+      alert("Invalid row number!");
+    }
+  } else {
+    alert("Please enter row number!");
+  }
+}
+
+
+    function addColumns() {
+      var table = document.getElementById("userDataTable");
+      for (var i = 0; i < table.rows.length; i++) {
+        var cell = table.rows[i].insertCell(-1);
+        cell.innerHTML = "New Cell";
+      }
+    }
+
+    function deleteColumn() {
+      var table = document.getElementById("userDataTable");
+      var columnNumber = document.getElementById("columnNumber").value;
+      if (columnNumber !== "") {
+        var columns = table.rows[0].cells.length;
+        if (columnNumber >= 1 && columnNumber <= columns) {
+          for (var i = 0; i < table.rows.length; i++) {
+            table.rows[i].deleteCell(columnNumber - 1);
+          }
+        } else {
+          alert("Invalid column number!");
+        }
+      } else {
+        alert("Please enter column number!");
+      }
+    }
+
+    
+  </script>
 </body>
 </html>
